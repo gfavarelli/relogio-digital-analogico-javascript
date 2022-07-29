@@ -1,0 +1,140 @@
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #000;
+    --secondary-color: #fff;
+    --orange: #ff2a00;
+    --theme-relogio: #f0f0f0;
+    
+}
+
+html.dark {
+    --primary-color: #fff;
+    --secondary-color: #333;
+    --theme-relogio: #ADD8E6;
+}
+
+html.dark {
+    background-color: #242424;
+    color: var(--primary-color);
+}
+
+html {
+    transition: all 0.5s ease-in ;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+.tema-dark {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    border: 0;
+    border-radius: 4px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 100px;
+    cursor: pointer;
+}
+
+.tema-dark:focus {
+    outline: none;
+}
+
+.relogio-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.relogio {
+    background-color: var(--theme-relogio);
+    height: 200px;
+    width: 200px;
+    position: relative;
+    border-radius: 30%;
+}
+
+.ponteiro {
+    background-color: var(--primary-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 65px;
+    width: 3px;
+    transform-origin: bottom center;
+    transition: all 0.5s ease-in;
+}
+
+.ponteiro.hora {
+    transform: translate(-50%, -100%) rotate(0deg);
+}
+
+.ponteiro.minuto {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+}
+
+.ponteiro.segundo {
+    transform: translate(-50%, -100%) rotate(0deg);
+    height: 100px;
+    background-color: var(--orange);
+}
+
+.ponto-central {
+    background-color: var(--orange);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.ponto-central::after {
+    content: '';
+    background-color: var(--primary-color);
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.horario {
+    font-size: 60px;
+}
+
+.data {
+    color: var(--black);
+    font-size: 14px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.data .circulo {
+    font-size: 12px;
+    transition: all 0.5 ease-in;
+    line-height: 18px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    color: var(--secondary-color);
+    background-color: var(--primary-color);
+}
